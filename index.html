@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantas Carlinhos</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <img src="assets/logoplanta.svg" class="logo-icon::after">
+            </div>
+            <h1 class="logo-text">Plantas Carlinhos</h1>
+        </div>
+        <nav class="nav-menu">
+            <a href="#" class="nav-link active">Loja</a>
+            <a href="#" class="nav-link">Contato</a>
+            <a href="#" class="nav-link">Sobre</a>
+        </nav>
+        <div class="header-icons">
+            <div class="icon-favorite">
+                <div class="heart-icon">
+                    <img src="assets/headercoracao.svg" class=".heart-icon">
+                </div>
+                <div class="badge">1</div>
+            </div>
+            <div class="icon-cart">
+                <div class="cart-icon">
+                    <img src="assets/headercarrinho.svg" class="cart-icon">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title">Filtrar</div>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-title">Categorias</div>
+                <div class="checkbox-item active">
+                    <div class="checkbox checked"></div>
+                    <span>Plantas Externas</span>
+                </div>
+                <div class="checkbox-item active">
+                    <div class="checkbox checked"></div>
+                    <span>Plantas Internas</span>
+                </div>
+                <div class="checkbox-item">
+                    <div class="checkbox"></div>
+                    <span>Plantas Grandes</span>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-title">Preço</div>
+                <div class="price-range-container">
+                    <div class="price-inputs">
+                        <div class="price-input-group">
+                            <label for="min-price">Min</label>
+                            <input type="number" id="min-price" class="price-input" placeholder="R$ 0" min="0">
+                        </div>
+                        <div class="price-input-group">
+                            <label for="max-price">Max</label>
+                            <input type="number" id="max-price" class="price-input" placeholder="R$ 100" min="0">
+                        </div>
+                    </div>
+                    <div class="price-slider">
+                        <div class="slider-track"></div>
+                        <input type="range" id="min-slider" class="range-slider" min="0" max="100" value="0">
+                        <input type="range" id="max-slider" class="range-slider" min="0" max="100" value="100">
+                    </div>
+                    <button class="price-button">Aplicar filtro</button>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <div class="sidebar-title">Avaliação</div>
+                <div class="rating-item">
+                    <div class="checkbox checked"></div>
+                    <span>acima</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content">
+            <div class="content-header">
+                <div class="search-bar">
+                    <div class="search-icon">
+                        <img src="assets/seach.svg" class="search-icon">
+                    </div>
+                    <input type="text" placeholder="Pesquisar" class="search-input">
+                    <div class="search-clear">
+                        <img src="assets/clear.svg" class="search-clear">
+                    </div>
+                </div>
+                
+                <div class="sort-options">
+                    <span>Classificar:</span>
+                    <button class="sort-button active">Relevante</button>
+                    <button class="sort-button">Popular</button>
+                    <button class="sort-button">Mais Novos</button>
+                </div>
+            </div>
+            
+            <div class="product-grid">
+                <!-- Produto 1 -->
+                <div class="product-card">
+                    <img src="https://placehold.co/186x186" alt="Ficus Elastica" class="product-image">
+                    <div class="favorite-button active">
+                        <div class="heart-icon"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Ficus Elastica</h3>
+                        <div class="product-rating">
+                            <div class="stars"></div>
+                            <span class="rating-count">(147)</span>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <div class="price-info">
+                            <span class="price-label">Preço</span>
+                            <span class="price-value">R$ 53,00</span>
+                        </div>
+                        <button class="add-to-cart">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+                
+                <!-- Produto 2 -->
+                <div class="product-card">
+                    <img src="https://placehold.co/186x186" alt="Tricolor" class="product-image">
+                    <div class="favorite-button active">
+                        <div class="heart-icon"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Tricolor</h3>
+                        <div class="product-rating">
+                            <div class="stars"></div>
+                            <span class="rating-count">(300)</span>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <div class="price-info">
+                            <span class="price-label">Preço</span>
+                            <span class="price-value">R$ 18,00</span>
+                        </div>
+                        <button class="add-to-cart">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+                
+                <!-- Produto 3 -->
+                <div class="product-card">
+                    <img src="https://placehold.co/186x186" alt="Palmeira Areca Bambu" class="product-image">
+                    <div class="favorite-button">
+                        <div class="heart-icon"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Palmeira Areca Bambu</h3>
+                        <div class="product-rating">
+                            <div class="stars"></div>
+                            <span class="rating-count">(150)</span>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <div class="price-info">
+                            <span class="price-label">Preço</span>
+                            <span class="price-value">R$ 50,00</span>
+                        </div>
+                        <button class="add-to-cart">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+                
+                <!-- Produto 4 -->
+                <div class="product-card">
+                    <img src="https://placehold.co/186x186" alt="Palmeira Ráfia" class="product-image">
+                    <div class="favorite-button">
+                        <div class="heart-icon"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Palmeira Ráfia</h3>
+                        <div class="product-rating">
+                            <div class="stars"></div>
+                            <span class="rating-count">(55)</span>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <div class="price-info">
+                            <span class="price-label">Preço</span>
+                            <span class="price-value">R$ 10,00</span>
+                        </div>
+                        <button class="add-to-cart">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+                
+                <!-- Produto 5 -->
+                <div class="product-card">
+                    <img src="https://placehold.co/186x186" alt="Croton" class="product-image">
+                    <div class="favorite-button">
+                        <div class="heart-icon"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Croton</h3>
+                        <div class="product-rating">
+                            <div class="stars"></div>
+                            <span class="rating-count">(1950)</span>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <div class="price-info">
+                            <span class="price-label">Preço</span>
+                            <span class="price-value">R$ 20,00</span>
+                        </div>
+                        <button class="add-to-cart">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+                
+                <!-- Produto 6 -->
+                <div class="product-card">
+                    <img src="https://placehold.co/186x186" alt="Amendoeira-da-praia" class="product-image">
+                    <div class="favorite-button active">
+                        <div class="heart-icon"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Amendoeira-da-praia</h3>
+                        <div class="product-rating">
+                            <div class="stars"></div>
+                            <span class="rating-count">(200)</span>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <div class="price-info">
+                            <span class="price-label">Preço</span>
+                            <span class="price-value">R$ 10,00</span>
+                        </div>
+                        <button class="add-to-cart">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+                
+                <!-- Produto 7 -->
+                <div class="product-card">
+                    <img src="https://placehold.co/186x186" alt="Hibiscus Verde Trançado" class="product-image">
+                    <div class="favorite-button active">
+                        <div class="heart-icon"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Hibiscus Verde Trançado</h3>
+                        <div class="product-rating">
+                            <div class="stars"></div>
+                            <span class="rating-count">(240)</span>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <div class="price-info">
+                            <span class="price-label">Preço</span>
+                            <span class="price-value">R$ 28,00</span>
+                        </div>
+                        <button class="add-to-cart">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+                
+                <!-- Produto 8 -->
+                <div class="product-card">
+                    <img src="https://placehold.co/186x186" alt="Estrelícia" class="product-image">
+                    <div class="favorite-button">
+                        <div class="heart-icon"></div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Estrelícia</h3>
+                        <div class="product-rating">
+                            <div class="stars"></div>
+                            <span class="rating-count">(245)</span>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <div class="price-info">
+                            <span class="price-label">Preço</span>
+                            <span class="price-value">R$ 25,00</span>
+                        </div>
+                        <button class="add-to-cart">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <div class="links-column">
+                <h4>Contate-nos</h4>
+                <a href="#">Whatsapp</a>
+                <a href="#">Instagram</a>
+            </div>
+            <div class="links-column">
+                <h4>Recursos</h4>
+                <a href="admin.html">Login do proprietário</a>
+            </div>
+        </div>
+        <div class="social-icons">
+            <div class="social-icon"></div>
+            <div class="social-icon"></div>
+            <div class="social-icon"></div>
+        </div>
+    </footer>
+</body>
+</html>
