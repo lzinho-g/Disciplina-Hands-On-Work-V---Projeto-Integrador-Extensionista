@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plantas Carlinhos</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/inputmask.min.js"></script>
+    <script src="js/jquery.inputmask.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://kit.fontawesome.com/d074c06fe2.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="header">
@@ -13,6 +18,12 @@
                 <img src="assets/logoplanta.svg" class="logo-icon::after">
             </div>
             <h1 class="logo-text">Plantas Carlinhos</h1>
+        </div>
+        <!-- Botão do menu hambúrguer -->
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
         <nav class="nav-menu">
             <a href="#" class="nav-link active">Loja</a>
@@ -43,11 +54,15 @@
             <div class="sidebar-section">
                 <div class="sidebar-title">Categorias</div>
                 <div class="checkbox-item active">
-                    <div class="checkbox checked"></div>
+                    <div class="checkbox checked">
+                        <img src="assets/confirm.svg">
+                    </div>
                     <span>Plantas Externas</span>
                 </div>
                 <div class="checkbox-item active">
-                    <div class="checkbox checked"></div>
+                    <div class="checkbox checked">
+                        <img src="assets/confirm.svg">
+                    </div>
                     <span>Plantas Internas</span>
                 </div>
                 <div class="checkbox-item">
@@ -55,25 +70,30 @@
                     <span>Plantas Grandes</span>
                 </div>
             </div>
-            
+
             <div class="sidebar-section">
                 <div class="sidebar-title">Preço</div>
-                <div class="price-range-container">
+                    <div class="price-range-container">
                     <div class="price-inputs">
+
+                    <script>$(document).ready(function () {
+                        $(document).ready(function () {
+                            $("#preco-min").inputmask("999-999");  //static mask
+                        });
+                    });</script>
+
                         <div class="price-input-group">
-                            <label for="min-price">Min</label>
-                            <input type="number" id="min-price" class="price-input" placeholder="R$ 0" min="0">
+                            <label for="preco-min">Min</label>
+                            <input id="preco-min" type="number" class="price-input">
                         </div>
+
                         <div class="price-input-group">
                             <label for="max-price">Max</label>
-                            <input type="number" id="max-price" class="price-input" placeholder="R$ 100" min="0">
+                            <input type="number" id="max-price" class="price-input" placeholder="R$ 100" min="0" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                         </div>
+
                     </div>
-                    <div class="price-slider">
-                        <div class="slider-track"></div>
-                        <input type="range" id="min-slider" class="range-slider" min="0" max="100" value="0">
-                        <input type="range" id="max-slider" class="range-slider" min="0" max="100" value="100">
-                    </div>
+                    
                     <button class="price-button">Aplicar filtro</button>
                 </div>
             </div>
@@ -110,10 +130,10 @@
             <div class="product-grid">
                 <!-- Produto 1 -->
                 <div class="product-card">
-                    <img src="https://placehold.co/186x186" alt="Ficus Elastica" class="product-image">
-                    <div class="favorite-button active">
-                        <div class="heart-icon"></div>
-                    </div>
+                    <img src="assets/ficus elastica.svg" alt="Ficus Elastica" class="product-image">
+                    <button class="favorite-button">
+                        <img class="coracao" src="assets/favorito 1.svg" data-state="empty">
+                    </button>
                     <div class="product-info">
                         <h3 class="product-name">Ficus Elastica</h3>
                         <div class="product-rating">
@@ -132,10 +152,10 @@
                 
                 <!-- Produto 2 -->
                 <div class="product-card">
-                    <img src="https://placehold.co/186x186" alt="Tricolor" class="product-image">
-                    <div class="favorite-button active">
-                        <div class="heart-icon"></div>
-                    </div>
+                    <img src="assets/tricolor.svg" alt="Tricolor" class="product-image">
+                    <button class="favorite-button">
+                        <img class="coracao" src="assets/favorito 1.svg" data-state="empty">
+                    </button>
                     <div class="product-info">
                         <h3 class="product-name">Tricolor</h3>
                         <div class="product-rating">
@@ -154,10 +174,10 @@
                 
                 <!-- Produto 3 -->
                 <div class="product-card">
-                    <img src="https://placehold.co/186x186" alt="Palmeira Areca Bambu" class="product-image">
-                    <div class="favorite-button">
-                        <div class="heart-icon"></div>
-                    </div>
+                    <img src="assets/palmeira areca bambu.svg" alt="Palmeira Areca Bambu" class="product-image">
+                    <button class="favorite-button">
+                        <img class="coracao" src="assets/favorito 1.svg" data-state="empty">
+                    </button>
                     <div class="product-info">
                         <h3 class="product-name">Palmeira Areca Bambu</h3>
                         <div class="product-rating">
@@ -176,10 +196,10 @@
                 
                 <!-- Produto 4 -->
                 <div class="product-card">
-                    <img src="https://placehold.co/186x186" alt="Palmeira Ráfia" class="product-image">
-                    <div class="favorite-button">
-                        <div class="heart-icon"></div>
-                    </div>
+                    <img src="assets/palmeira rafia.svg" alt="Palmeira Ráfia" class="product-image">
+                    <button class="favorite-button">
+                        <img class="coracao" src="assets/favorito 1.svg" data-state="empty">
+                    </button>
                     <div class="product-info">
                         <h3 class="product-name">Palmeira Ráfia</h3>
                         <div class="product-rating">
@@ -198,10 +218,10 @@
                 
                 <!-- Produto 5 -->
                 <div class="product-card">
-                    <img src="https://placehold.co/186x186" alt="Croton" class="product-image">
-                    <div class="favorite-button">
-                        <div class="heart-icon"></div>
-                    </div>
+                    <img src="assets/croton.svg" alt="Croton" class="product-image">
+                    <button class="favorite-button">
+                        <img class="coracao" src="assets/favorito 1.svg" data-state="empty">
+                    </button>
                     <div class="product-info">
                         <h3 class="product-name">Croton</h3>
                         <div class="product-rating">
@@ -220,10 +240,10 @@
                 
                 <!-- Produto 6 -->
                 <div class="product-card">
-                    <img src="https://placehold.co/186x186" alt="Amendoeira-da-praia" class="product-image">
-                    <div class="favorite-button active">
-                        <div class="heart-icon"></div>
-                    </div>
+                    <img src="assets/amendoeira da praia.svg" alt="Amendoeira-da-praia" class="product-image">
+                    <button class="favorite-button">
+                        <img class="coracao" src="assets/favorito 1.svg" data-state="empty">
+                    </button>
                     <div class="product-info">
                         <h3 class="product-name">Amendoeira-da-praia</h3>
                         <div class="product-rating">
@@ -242,10 +262,10 @@
                 
                 <!-- Produto 7 -->
                 <div class="product-card">
-                    <img src="https://placehold.co/186x186" alt="Hibiscus Verde Trançado" class="product-image">
-                    <div class="favorite-button active">
-                        <div class="heart-icon"></div>
-                    </div>
+                    <img src="assets/hibisco verde.svg" alt="Hibiscus Verde Trançado" class="product-image">
+                    <button class="favorite-button">
+                        <img class="coracao" src="assets/favorito 1.svg" data-state="empty">
+                    </button>
                     <div class="product-info">
                         <h3 class="product-name">Hibiscus Verde Trançado</h3>
                         <div class="product-rating">
@@ -264,10 +284,10 @@
                 
                 <!-- Produto 8 -->
                 <div class="product-card">
-                    <img src="https://placehold.co/186x186" alt="Estrelícia" class="product-image">
-                    <div class="favorite-button">
-                        <div class="heart-icon"></div>
-                    </div>
+                    <img src="assets/estrelicia.svg" alt="Estrelícia" class="product-image">
+                    <button class="favorite-button">
+                        <img class="coracao" src="assets/favorito 1.svg" data-state="empty">
+                    </button>
                     <div class="product-info">
                         <h3 class="product-name">Estrelícia</h3>
                         <div class="product-rating">
@@ -283,7 +303,6 @@
                         <button class="add-to-cart">Adicionar ao carrinho</button>
                     </div>
                 </div>
-            </div>
         </main>
     </div>
 

@@ -57,7 +57,7 @@ body {
 
 .nav-menu {
     display: flex;
-    gap: 30px;
+    gap: 200px;
 }
 
 .nav-link {
@@ -166,13 +166,6 @@ body {
     border: none;
 }
 
-.checkbox.checked::after {
-    content: "";
-    width: 13px;
-    height: 9.59px;
-    background: white;
-}
-
 .price-inputs {
     display: flex;
     justify-content: space-between;
@@ -221,7 +214,7 @@ body {
 .price-range-container {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    
 }
 
 .price-inputs {
@@ -401,6 +394,7 @@ body {
 }
 
 .product-card {
+    position: relative;
     padding: 20px 25px;
     background: white;
     border-radius: 30px;
@@ -411,6 +405,12 @@ body {
     gap: 20px;
 }
 
+.product-image-container {
+    position: relative; /* Container para o botão absoluto */
+    display: flex;
+    justify-content: center;
+}
+
 .product-image {
     width: 186px;
     height: 186px;
@@ -419,17 +419,30 @@ body {
 }
 
 .favorite-button {
-    width: 40px;
-    height: 38px;
-    padding: 10px;
-    border-radius: 12px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    /* Necessário para não reverter a cor do botão ao cinza padrão */
+    background: none;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
 }
 
-.favorite-button.active {
+.favorite-button img {
+    width: 18px;
+    height: 18px;
+}
+
+/* Quando o coração está cheio, o círculo aparece */
+/* Lógica do seletor: se a classe .favorite-button tem a classe .coracao com o atributo data-state="filled", então aplica o background à classe .favorite-button */
+.favorite-button:has(.coracao[data-state="filled"]), .favorite-button:hover {
     background: rgba(255, 179, 179, 0.2);
 }
 
@@ -549,4 +562,150 @@ body {
     width: 20px;
     height: 20px;
     background: white;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header {
+        position: relative;
+        padding: 20px;
+    }
+    
+    .logo-container {
+        gap: 10px;
+    }
+    
+    .logo-text {
+        font-size: 20px;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 110px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 110px);
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 30px;
+        padding-top: 40px;
+        transition: 0.3s;
+        z-index: 100;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-link {
+        width: auto;
+        font-size: 24px;
+    }
+    
+    .header-icons {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 20px;
+        justify-content: center;
+        gap: 50px;
+        border-top: 2px solid #E6E6E6;
+    }
+    
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        cursor: pointer;
+        z-index: 101;
+    }
+    
+    .menu-toggle span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background: #1E1E1E;
+        border-radius: 3px;
+        transition: 0.3s;
+    }
+    
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    
+    .main-container {
+        height: calc(100vh - 190px); /* Ajuste para o header e footer mobile */
+    }
+    
+    .sidebar {
+        position: fixed;
+        top: 110px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 190px);
+        z-index: 99;
+        transition: 0.3s;
+    }
+    
+    .sidebar.active {
+        left: 0;
+    }
+    
+    .content {
+        padding: 20px;
+    }
+    
+    .search-bar {
+        width: 100%;
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 20px;
+    }
+    
+    .product-card {
+        position: relative;
+    }
+    
+    .product-image {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* media query para telas muito pequenas */
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 18px;
+    }
+    
+    .product-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .footer {
+        padding: 20px;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 30px;
+    }
 }

@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Inter';
-  src: url('assets/fonts/inter.ttf');
+  src: url('../assets/fonts/inter.ttf');
 }
 
 .teste {
@@ -70,30 +70,28 @@ html, body {
 nav {
     display: flex;
     gap: 20px;
-}
-
-nav a {
-    width: 90px;
-    height: 40px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: black;
-    font-size: 1.2rem;
-    font-weight: 400;
-    text-decoration: none;
-}
-
-nav a:hover {
-    text-decoration: underline;
+        a {
+            width: 90px;
+            height: 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: black;
+            font-size: 1.2rem;
+            font-weight: 400;
+            text-decoration: none;
+            :hover {
+                text-decoration: underline;
+            }
+        }
 }
 
 /* HERO */
 .hero-section {
     height: 100vh;
     flex: 1;
-    background-image: url("assets/bg_admin.webp");
+    background-image: url("../assets/bg_admin.webp");
     background-size: cover;
     background-position: center;
     display: flex;
